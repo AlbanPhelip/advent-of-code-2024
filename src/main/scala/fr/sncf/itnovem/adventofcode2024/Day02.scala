@@ -1,6 +1,7 @@
 package fr.sncf.itnovem.adventofcode2024
 
 import scala.math.abs
+
 object Day02 extends AdventOfCode {
 
   private def isReportValidStar1(report: Array[Int]): Boolean = {
@@ -18,7 +19,9 @@ object Day02 extends AdventOfCode {
       .map(isReportValidStar1)
       .reduce(_ || _)
   }
+
   override def fileName: String = "aoc02.txt"
+
   override def execute(): (Any, Any) = {
     val parsedInput = input.map(_.split(" ").map(_.toInt))
 
