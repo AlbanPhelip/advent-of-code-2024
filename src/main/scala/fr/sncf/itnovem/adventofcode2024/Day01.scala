@@ -4,7 +4,7 @@ import scala.math.abs
 
 object Day01 extends AdventOfCode {
   override def fileName: String = "aoc01.txt"
-  override def execute(): (Any, Any) = {
+  override def execute(): (Long, Long) = {
     val parsedInput = input
       .map(_.split(" {3}"))
       .map(x => (x(0).toInt, x(1).toInt))

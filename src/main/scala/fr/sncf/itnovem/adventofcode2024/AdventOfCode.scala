@@ -6,7 +6,7 @@ trait AdventOfCode {
 
   def fileName: String
 
-  def execute(): (Any, Any)
+  def execute(): (Long, Long)
 
   val input: Array[String] = {
     val file = Source.fromFile(getClass.getResource(s"../../../../$fileName").getPath)

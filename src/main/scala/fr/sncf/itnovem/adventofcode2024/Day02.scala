@@ -22,7 +22,7 @@ object Day02 extends AdventOfCode {
 
   override def fileName: String = "aoc02.txt"
 
-  override def execute(): (Any, Any) = {
+  override def execute(): (Long, Long) = {
     val parsedInput = input.map(_.split(" ").map(_.toInt))
 
     val star1 = parsedInput.count(isReportValidStar1)
