@@ -29,10 +29,10 @@ object Day04 extends AdventOfCode {
     val star2 = data.indices.map { y =>
       data(y).indices.count { x =>
         (data(y)(x) == "A") && {
-          val diagonalNorthEast = Array(Try(data(y - 1)(x + 1)).getOrElse(""), Try(data(y + 1)(x - 1)).getOrElse("")).sorted.mkString("")
-          val diagonalSouthEast = Array(Try(data(y - 1)(x - 1)).getOrElse(""), Try(data(y + 1)(x + 1)).getOrElse("")).sorted.mkString("")
+          val diagonalNorthEast = Try(Array(data(y - 1)(x + 1), data(y + 1)(x - 1))).map(_.sorted.mkString(""))
+          val diagonalSouthEast = Try(Array(data(y - 1)(x - 1), data(y + 1)(x + 1))).map(_.sorted.mkString(""))
 
-          diagonalNorthEast == "MS" && diagonalSouthEast == "MS"
+          diagonalNorthEast == Success("MS") && diagonalSouthEast == Success("MS")
         }
       }
     }.sum
